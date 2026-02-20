@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h2>Life Decision Analysis 🏠</h2>
+    <p class="text-muted">
+        Based on your Digital Financial Twin, here is the analysis of your purchase decision.
+    </p>
+</div>
+
+<div class="card">
+    <h3>Purchase Details</h3>
+    <p><strong>Asset Type:</strong> {{ asset_type | capitalize }}</p>
+    <p><strong>Asset Price:</strong> ₹{{ asset_price }}</p>
+    <p><strong>Down Payment:</strong> ₹{{ down_payment }}</p>
+    <p><strong>Monthly EMI:</strong> ₹{{ emi }}</p>
+</div>
+
+<div class="card">
+    <h3>Affordability Assessment</h3>
+    <p><strong>Status:</strong> {{ affordability }}</p>
+
+    <p><strong>Estimated Time to Save Down Payment:</strong>
+        {{ years_to_save }} years
+    </p>
+</div>
+
+<div class="card">
+    <h3>Impact on Financial Twin</h3>
+    <p><strong>Net Worth After Purchase:</strong> ₹{{ sim_net_worth }}</p>
+    <p><strong>Goal Readiness Score:</strong> {{ sim_goal_score }}%</p>
+</div>
+
+<div class="card">
+    <h3>Decision Insight</h3>
+    {% if affordability == "Comfortable" %}
+        <p>You can afford this purchase without significantly harming your financial stability.</p>
+    {% elif affordability == "Moderate Risk" %}
+        <p>You may afford this purchase, but delaying or increasing savings is recommended.</p>
+    {% else %}
+        <p>This purchase is financially stressful at the moment. Consider delaying or reducing cost.</p>
+    {% endif %}
+</div>
+
+<a href="/simulate">
+    <button>Try Another Scenario</button>
+</a>
+
+<a href="/dashboard">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

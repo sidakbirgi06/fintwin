@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Scenario Simulation</h2>
+
+<p style="color: gray; font-size: 14px;">
+Test financial decisions using your Digital Financial Twin.
+These changes are simulated — your real data remains unchanged.
+</p>
+
+<form method="POST">
+
+    <h3>Choose a Scenario</h3>
+
+    <label>Increase Monthly Investment (₹)</label><br>
+    <input type="number" name="investment_increase" value="0"><br><br>
+
+    <label>Increase Monthly Expenses (₹)</label><br>
+    <input type="number" name="expense_increase" value="0"><br><br>
+
+    <label>Change Monthly Income (₹)</label><br>
+    <input type="number" name="income_change" value="0"><br><br>
+
+    <label>Add One-Time Loan (₹)</label><br>
+    <input type="number" name="new_loan" value="0"><br><br>
+
+    <button type="submit">Run Simulation</button>
+</form>
+
+
+<hr>
+
+<h3>Simulate a Life Decision 🏠🚗</h3>
+
+<p class="text-muted">
+Test major life purchases like buying a house or car using your Digital Financial Twin.
+</p>
+
+<form method="POST">
+
+    <input type="hidden" name="life_event" value="house">
+
+    <label>Asset Type</label><br>
+    <select name="asset_type">
+        <option value="house">House</option>
+        <option value="car">Car</option>
+    </select><br><br>
+
+    <label>Asset Price (₹)</label><br>
+    <input type="number" name="asset_price" required><br><br>
+
+    <label>Down Payment (₹)</label><br>
+    <input type="number" name="down_payment" required><br><br>
+
+    <label>Expected Monthly EMI (₹)</label><br>
+    <input type="number" name="emi" required><br><br>
+
+    <button type="submit">Analyze Purchase Decision</button>
+</form>
+
+<a href="/dashboard">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

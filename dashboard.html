@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Intro -->
+<div class="card">
+    <h2>Your Digital Financial Twin 🧠</h2>
+    <p class="text-muted">
+        This dashboard represents a live snapshot of your finances based on the data you provided.
+    </p>
+</div>
+
+<!-- Financial Health Score -->
+<div class="card">
+    <h3>Financial Health Score 💡</h3>
+
+    <h1>{{ financial_health_score }} / 100</h1>
+
+    {% if financial_health_score >= 80 %}
+        <p><strong>Status:</strong> 🟢 Strong Financial Health</p>
+        <p class="text-muted">
+            Your financial foundation is strong and you are well positioned for long-term goals.
+        </p>
+    {% elif financial_health_score >= 50 %}
+        <p><strong>Status:</strong> 🟡 Moderate Financial Health</p>
+        <p class="text-muted">
+            Your finances are stable, but improving savings discipline can boost future security.
+        </p>
+    {% else %}
+        <p><strong>Status:</strong> 🔴 Needs Attention</p>
+        <p class="text-muted">
+            Your current financial structure may create stress in the long run if not improved.
+        </p>
+    {% endif %}
+</div>
+
+<!-- Cash Flow Overview -->
+<div class="card">
+    <h3>Cash Flow Overview</h3>
+    <p><strong>Monthly Income:</strong> ₹{{ income }}</p>
+    <p><strong>Monthly Expenses:</strong> ₹{{ expenses }}</p>
+    <p><strong>Monthly Surplus:</strong> ₹{{ monthly_surplus }}</p>
+</div>
+
+<!-- Wealth Snapshot -->
+<div class="card">
+    <h3>Wealth Snapshot</h3>
+    <p><strong>Net Worth:</strong> ₹{{ net_worth }}</p>
+    <p><strong>Goal Readiness Score:</strong> {{ goal_score }}%</p>
+
+    <p class="text-muted">
+        Goal readiness indicates how feasible your long-term financial goal is
+        based on your current financial position.
+    </p>
+</div>
+
+<!-- Time-Based Future Projection -->
+<div class="card">
+    <h3>Your Financial Future 🔮</h3>
+
+    <p class="text-muted">
+        These projections estimate where your net worth could be if you continue
+        with your current financial behavior.
+    </p>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+        <div style="flex: 1; min-width: 200px;">
+            <h4>After 5 Years</h4>
+            <p><strong>₹{{ projection_5y }}</strong></p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <h4>After 10 Years</h4>
+            <p><strong>₹{{ projection_10y }}</strong></p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <h4>After 20 Years</h4>
+            <p><strong>₹{{ projection_20y }}</strong></p>
+        </div>
+
+    </div>
+
+    <p class="text-muted" style="margin-top: 15px;">
+        Projections are based on current savings behavior and do not account for
+        inflation or market fluctuations.
+    </p>
+</div>
+
+<!-- Next Actions -->
+<div class="card">
+    <h3>Next Actions</h3>
+
+    <a href="/simulate">
+        <button>Test a Financial Scenario 🔮</button>
+    </a>
+
+    <br><br>
+
+    <a href="/setup">
+        <button>Rebuild My Financial Twin 🔄</button>
+    </a>
+</div>
+
+{% endblock %}

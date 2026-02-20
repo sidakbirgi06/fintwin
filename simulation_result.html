@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Simulation Results</h2>
+
+<p>
+Below is a comparison between your original financial position and the simulated
+scenario based on the decisions you tested.
+</p>
+
+<hr>
+
+<h3>Original Financial Snapshot</h3>
+<p><strong>Monthly Surplus:</strong> ₹{{ base_surplus }}</p>
+<p><strong>Net Worth:</strong> ₹{{ base_net_worth }}</p>
+<p><strong>Goal Readiness Score:</strong> {{ base_goal_score }}%</p>
+
+<hr>
+
+<h3>Simulated Financial Snapshot</h3>
+<p><strong>Monthly Surplus:</strong> ₹{{ sim_surplus }}</p>
+<p><strong>Net Worth:</strong> ₹{{ sim_net_worth }}</p>
+<p><strong>Goal Readiness Score:</strong> {{ sim_goal_score }}%</p>
+
+<hr>
+
+<h3>AI-Generated Insights</h3>
+
+{% if insights %}
+<ul>
+    {% for insight in insights %}
+        <li>{{ insight }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No significant change detected under this scenario.</p>
+{% endif %}
+
+<hr>
+
+<a href="/simulate">
+    <button>Try Another Simulation</button>
+</a>
+
+<a href="/dashboard">
+    <button>Back to Dashboard</button>
+</a>
+
+{% endblock %}

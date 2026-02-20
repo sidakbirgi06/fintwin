@@ -1,0 +1,137 @@
+/* -----------------------------
+   Global Styles
+----------------------------- */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9fafb;
+    color: #111827;
+    margin: 0;
+    padding: 0;
+}
+
+/* -----------------------------
+   Navbar
+----------------------------- */
+
+nav {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h2 {
+    margin: 0;
+    font-weight: 700;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* -----------------------------
+   Page Container
+----------------------------- */
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* -----------------------------
+   Headings
+----------------------------- */
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+/* -----------------------------
+   Cards
+----------------------------- */
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* -----------------------------
+   Forms
+----------------------------- */
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 16px;
+}
+
+label {
+    font-weight: 500;
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* -----------------------------
+   Buttons
+----------------------------- */
+
+button {
+    background-color: #6366f1;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #4f46e5;
+}
+
+/* -----------------------------
+   Utility
+----------------------------- */
+
+.text-muted {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 30px 0;
+}

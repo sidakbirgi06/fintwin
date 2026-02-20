@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h3>Linked Bank Accounts 🏦</h3>
+    <p class="text-muted">
+        Securely connect your bank account to view balances and enable financial insights.
+    </p>
+</div>
+
+<div class="card">
+    <h4>Supported Banks</h4>
+    <ul>
+        <li>State Bank of India (SBI)</li>
+        <li>HDFC Bank</li>
+        <li>ICICI Bank</li>
+        <li>Axis Bank</li>
+        <li>Other major Indian banks</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h4>Security & Privacy</h4>
+    <p class="text-muted">
+        Bank connections are protected using encrypted, consent-based access.
+        FinTwin does not store your login credentials.
+    </p>
+</div>
+
+<div class="card">
+    <h4>Connect a Bank Account</h4>
+    <p class="text-muted">
+        Linking your bank account helps generate accurate financial insights
+        and improves future projections.
+    </p>
+
+    <button disabled>Connect Bank Account</button>
+    <p class="text-muted" style="margin-top:10px;">
+        (Demo only – functionality not enabled)
+    </p>
+</div>
+
+{% endblock %}
