@@ -6,8 +6,8 @@ app = Flask(__name__)
 user_data = {}
 
 @app.route("/")
-def home():
-    return render_template("home.html")
+def landing():
+    return render_template("landing.html")
 
 @app.route("/login")
 def login():
@@ -235,6 +235,9 @@ def simulate():
     # GET request → show simulation page
     return render_template("simulate.html")
 
+@app.route("/")
+def home():
+    return render_template("home.html")
 
 
 @app.route("/about")
@@ -260,4 +263,5 @@ if __name__ == "__main__":
 
 
     
+
 
