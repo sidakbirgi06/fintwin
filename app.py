@@ -236,10 +236,6 @@ def simulate():
     return render_template("simulate.html")
 
 
-@app.route("/")
-def home():
-    return render_template("home.html")
-
 
 @app.route("/about")
 def about():
@@ -264,3 +260,4 @@ if __name__ == "__main__":
 
 
     
+
